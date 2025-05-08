@@ -1,8 +1,10 @@
 -- Clinic Booking System Database
--- Created for SQL Assignment - MySQL only
 
--- Drop tables if they exist to avoid duplication
-DROP TABLE IF EXISTS Prescriptions, Appointments, Patients, Doctors, Users;
+-- Create Database
+CREATE DATABASE clinic_booking_system;
+
+-- Creating Tables
+USE clinic_booking_system;
 
 -- USERS TABLE: General user info (can be a doctor or patient)
 CREATE TABLE Users (
