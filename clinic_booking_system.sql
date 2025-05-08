@@ -51,3 +51,37 @@ CREATE TABLE Prescriptions (
     instructions TEXT,
     FOREIGN KEY (appointment_id) REFERENCES Appointments(appointment_id)
 );
+
+-- Adding Sample data 
+
+-- Sample users (2 doctors, 2 patients)
+INSERT INTO Users (full_name, email, phone, user_type) VALUES
+('Dr. Lisa Moyo', 'lisa.moyo@clinic.com', '0771122334', 'doctor'),
+('Dr. Tawanda Ncube', 'tawanda.ncube@clinic.com', '0773344556', 'doctor'),
+('Faith Dube', 'faith.dube@example.com', '0775566778', 'patient'),
+('John Chikore', 'john.chikore@example.com', '0779988776', 'patient');
+
+-- Assume doctor_id matches Users.user_id (1 and 2)
+INSERT INTO Doctors (doctor_id, specialization, license_number) VALUES
+(1, 'General Practitioner', 'DOC-ZW-1001'),
+(2, 'Pediatrics', 'DOC-ZW-1002');
+
+-- Assume patient_id matches Users.user_id (3 and 4)
+INSERT INTO Patients (patient_id, date_of_birth, gender) VALUES
+(3, '1990-05-15', 'female'),
+(4, '1988-11-30', 'male');
+
+-- Appointments between patients and doctors
+INSERT INTO Appointments (patient_id, doctor_id, appointment_date, status) VALUES
+(3, 1, '2025-05-10 09:00:00', 'scheduled'),
+(4, 2, '2025-05-11 10:30:00', 'scheduled');
+
+-- Linked to appointments
+INSERT INTO Prescriptions (appointment_id, medication, dosage, instructions) VALUES
+(1, 'Paracetamol', '500mg', 'Take 1 tablet every 8 hours after meals'),
+(2, 'Cough Syrup', '10ml', 'Twice daily for 5 days');
+
+
+
+
+
