@@ -21,7 +21,7 @@ The system consists of the following main entities:
 Each table is created with appropriate primary keys, foreign keys, and constraints (NOT NULL, UNIQUE, ENUM, etc.).
 
 ## 🧩 ERD (Entity Relationship Diagram)
-![ERD Screenshot](to be added)
+![ERD Image](ERD.png)
 
 ## 🚀 How to Use
 
